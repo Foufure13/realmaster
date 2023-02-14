@@ -16,6 +16,7 @@ while($avatar =$enregister_avatar->fetch()) {
     <div  class="carte_avatar carte_load_avatar">
         <div class="carte_avatar_img"></div>
         <h2><?=$_SESSION['pseudo'] ?></h2>
+        <h2><?=$_SESSION['classe_avatar'] ?></h2>
         </div>
     </div>
 

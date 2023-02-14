@@ -75,15 +75,11 @@ $_SESSION['PATH']= "/Avatar/Avatar.php";
 
 
     <section id="load_avatar">
-
-    <div  class="carte_avatar carte_load_avatar">
-      <div class="carte_avatar_img"></div>
-      <h2><?=$_SESSION['pseudo'] ?></h2>
-      </div>
-
-
-
-    
+        <div class="carte_avatar carte_load_avatar">
+            <div class="carte_avatar_img"></div>
+            <h2><?=$_SESSION['pseudo'] ?></h2>
+            <h2>CLASSE : <?=$_SESSION['classe_avatar'] ?></h2>
+        </div>
     </section>
 
 

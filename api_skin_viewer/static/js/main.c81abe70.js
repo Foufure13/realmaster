@@ -1,18 +1,22 @@
-function sendDataToPHP(canvasData) {
+var current_class = "Rogue";
+
+function sendDataToPHP(canvasData,classes) {
+    const data = new FormData();
+    data.append('var1', canvasData);
+    data.append('var2', classes);
+
     fetch('./static/php/bdd.php', {
       method: 'POST',
-      body: canvasData,
+      body: data
     })
-      .then(response => response.text())
-      .then(data => {
-        console.log('Success:', data);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+    .then(response => response.text())
+    .then(data => {
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
   }
-  
-
 
 /*--------------------------------------------------------*/
 
@@ -17361,10 +17365,8 @@ n.m = e, n.n = function(e) {
                       requestAnimationFrame(() => {
                         const canvasData = canvas.toDataURL("image/octet-stream");
                         var canvasBase64 = canvasData.replace(/^data:image\/[a-z]+;base64,/, "");
-                        sendDataToPHP(canvasBase64);
-                        console.log(canvasBase64);
+                        sendDataToPHP(canvasBase64,current_class);
                         window.location.href = "/Avatar/Avatar.php";
-
                       });
                     },
                     children: "SAUVEGARDER PERSONNAGE"
@@ -17475,6 +17477,62 @@ n.m = e, n.n = function(e) {
                 children: [(0, x.jsx)("select", {
                     onChange: function(e) {
                         E(parseInt(e.target.value))
+                        switch (e.target.value) {
+                            case '768':
+                                current_class = "Rogue";
+                                break;
+                            case '775':
+                                current_class = "Archer";
+                                break;
+                            case '782':
+                               current_class = "Wizard";
+                                break;
+                            case '784':
+                                current_class = "Priest";
+                                break;
+                            case '797':
+                                current_class = "Warrior";
+                                break;
+                            case '798':
+                                current_class = "Knight";
+                                break;
+                            case '799':
+                                current_class = "Paladin";
+                                break;
+                            case '800':
+                                current_class = "Assassin";
+                                break;
+                            case '801':
+                                current_class = "Necromancer";
+                                break;
+                            case '802':
+                                current_class = "Huntress";
+                                break;
+                            case '803':
+                               current_class = "Mystic";
+                                break;
+                            case '804':
+                                current_class = "Trickster";
+                                break;
+                            case '805':
+                                current_class = "Sorcerer";
+                                break;
+                            case '806':
+                                current_class = "Ninja";
+                                break;
+                            case '785':
+                                current_class = "Samurai";
+                                break;
+                            case '796':
+                                current_class = "Bard";
+                                break;
+                            case '817':
+                                current_class = "Summoner";
+                                break;
+                            case '818':
+                                current_class = "Kensei";
+                                break;
+                        }
                     },
                     className: Z,
                     children: h.map((function(e) {
