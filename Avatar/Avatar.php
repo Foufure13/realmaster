@@ -58,10 +58,10 @@ $_SESSION['PATH']= "/Avatar/Avatar.php";
          <?php if (!isset($_SESSION['skin_avatar'])) { ?>
           <!-- <div class="carte_avatar_img_default"></div> -->
         <?php } else {?>
-          <div class="carte_avatar_img"></div>
+          <div class="carte_avatar_img_default"></div>
         <?php }?> 
-        <style>.carte_avatar_img_default {  background-image: url(<?=$_SESSION['skin_avatar_default']?>); }</style>
-        <style>.carte_avatar_img {  background-image: url(<?=$_SESSION['skin_avatar']?>); }</style>
+        <style>.carte_avatar_img_default {  background-image: url(<?=$_SESSION['skin_avatar']?>); }</style>
+        <!-- <style>.carte_avatar_img {  background-image: url(<?=$_SESSION['skin_avatar']?>); }</style> -->
         <div class="position_button">
             <a class="" href="../api_skin_viewer/index.html"><button class="button_creation">Creation   _Avatar</button></a>
         </div>
@@ -76,10 +76,10 @@ $_SESSION['PATH']= "/Avatar/Avatar.php";
 
     <section id="load_avatar">
 
-    <div  class="carte_avatar carte_load_avatar">
+    <!-- <div  class="carte_avatar carte_load_avatar">
       <div class="carte_avatar_img"></div>
       <h2><?=$_SESSION['pseudo'] ?></h2>
-      </div>
+      </div> -->
 
 
 
