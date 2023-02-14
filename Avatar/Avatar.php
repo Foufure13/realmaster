@@ -51,7 +51,7 @@ $_SESSION['PATH']= "/Avatar/Avatar.php";
 
 
 
-    <!-- <?php $_SESSION['skin_avatar_default']= ">";?> -->
+
 
 
     <section class="carte_avatar">
@@ -136,6 +136,20 @@ $_SESSION['PATH']= "/Avatar/Avatar.php";
 
 
 
+
+
+
+
+
+
+
+
 </body>
 
 </html>
+
+
+
+
+
+

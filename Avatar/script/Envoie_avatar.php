@@ -22,6 +22,15 @@ try {
 if(isset($_POST['Envoie_avatar'])){
     if (isset($_SESSION['skin_avatar'])) {
 
+        
+
+
+        
+        
+
+
+
+
 
         $insertUser = $bdd->prepare('INSERT INTO avatar(pseudo, image_base64)VALUES(?, ?)');
         $insertUser->execute(array($_SESSION['pseudo'], $_SESSION['skin_avatar']));
