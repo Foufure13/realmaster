@@ -39,7 +39,7 @@ $image_data = ob_get_contents();
 ob_end_clean();
 
 // encoder l'image dans un format base64
-$_SESSION['skin_avatar'] = base64_encode($image_data);
+$_SESSION['skin_avatar'] =  base64_encode($image_data);
 
 // afficher le résultat
 // echo $base64_image;

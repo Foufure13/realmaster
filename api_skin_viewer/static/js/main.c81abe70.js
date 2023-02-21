@@ -1,22 +1,67 @@
 var current_class = "Rogue";
+// var canvasBase64 = "";
+var canvasData ="vide";
 
-function sendDataToPHP(canvasData,classes) {
+function sendDataToPHP(canvasData, classes) {
     const data = new FormData();
     data.append('var1', canvasData);
     data.append('var2', classes);
-
+  
     fetch('./static/php/bdd.php', {
       method: 'POST',
       body: data
     })
-    .then(response => response.text())
-    .then(data => {
-      console.log('Success:', data);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
+      .then(response => response.text())
+      .then(data => {
+        console.log('Success:', data);
+        // window.location.href = "/Avatar/Avatar.php";
+        window.location.href = "/api_dps/index.php";
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  }
+  
+  function rognerImage(base64Image) {
+    return new Promise(resolve => {
+      const image = new Image();
+      image.onload = () => {
+        const canvas = document.createElement('canvas');
+        canvas.width = image.width - 420; // enlevant 150 pixels de chaque cote
+        canvas.height = image.height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(image, 220, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
+        const base64Rogne = canvas.toDataURL('image/png').replace(/^data:image\/(png|jpg);base64,/, '');
+        resolve(base64Rogne);
+      };
+      image.src = `data:image/png;base64,${base64Image}`;
     });
   }
+  
+  function saveAvatar() {
+    var canvas = document.getElementsByClassName("Canvas_canvas__DpWst")[0];
+    requestAnimationFrame(() => {
+      canvasData = canvas.toDataURL("image/octet-stream");
+      var canvasBase64 = canvasData.replace(/^data:image\/[a-z]+;base64,/, "");
+      if (canvasBase64 !== "" && canvasBase64 !== "data:image/png;base64,data:," && canvasBase64 !== "data:image/png;base64,") {
+        rognerImage(canvasBase64).then((rogne) => {
+          sendDataToPHP(rogne, current_class);
+          
+          console.log("OKLMMMM");
+        });
+      } else {
+        console.log("PUTAIN DE MERDE");
+      }
+    });
+  }
+  
+
+
+
+
+
+
+
 
 /*--------------------------------------------------------*/
 
@@ -17360,15 +17405,20 @@ n.m = e, n.n = function(e) {
                 }),
                 (0, x.jsx)("button", {
                     className: "Save_button",
+
+
+
+
+
                     onClick: () => {
-                      const canvas = document.getElementsByClassName("Canvas_canvas__DpWst")[0];
-                      requestAnimationFrame(() => {
-                        const canvasData = canvas.toDataURL("image/octet-stream");
-                        var canvasBase64 = canvasData.replace(/^data:image\/[a-z]+;base64,/, "");
-                        sendDataToPHP(canvasBase64,current_class);
-                        window.location.href = "/Avatar/Avatar.php";
-                      });
+                    saveAvatar();
                     },
+
+
+
+
+
+
                     children: "SAUVEGARDER PERSONNAGE"
                   }),
                  (0, x.jsxs)("div", {

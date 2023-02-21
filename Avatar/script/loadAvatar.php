@@ -14,7 +14,8 @@ while($avatar =$enregister_avatar->fetch()) {
     ?>
 
     <div  class="carte_avatar carte_load_avatar">
-        <img src="<?=$avatar['image_base64']?>">
+        <img src="<?=$avatar['image_base64']?>" style="transform: scale(0.5);">
+        <img src="<?=$avatar['stuff_base64']?>" style="transform: scale(2);" >
         <div class="carte_avatar_img"></div>
         <h2>Cree par <?=$avatar['pseudo'] ?> </br> Class : <?=$avatar['classe'] ?>  </h2>
         </div>

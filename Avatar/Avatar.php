@@ -1,6 +1,11 @@
 <?php
 ini_set('display_errors', 1);
 
+// $image = "data:image/png;base64,". $_POST["var1"];
+// $class = $_POST["var2"];
+// $_SESSION['skin_avatar']=$image;
+// $_SESSION['classe_avatar'] = $class;
+
 $file_to_include = '../script/script_base_db.php';
 include $file_to_include;
 
@@ -61,20 +66,30 @@ $_SESSION['PATH']= "/Avatar/Avatar.php";
 
 
          <?php if (!isset($_SESSION['skin_avatar'])) { ?>
-          <div class="carte_avatar_img_default"> <img src="<?=$_SESSION['skin_avatar_default'];?>"></div>
+          <div class="carte_avatar_img_default"> 
+            <img src="<?=$_SESSION['skin_avatar_default'];?>">
+            <img src="<?=$_SESSION['stuff_avatar_default'];?>"> 
+        </div>
+
         <?php } else {?>
-          <div class="carte_avatar_img_default"> <img src="<?=$_SESSION['skin_avatar'];?>">  <?=$_SESSION['classe_avatar']; ?></div>
+          <div class="carte_avatar_img_default"> 
+          <div><img src="<?=$_SESSION['skin_avatar'] ;?>"> </div>
+            <div class="stuff_avatar"><img src="<?=$_SESSION['stuff_avatar'];?>"> </div>
+            <?=$_SESSION['classe_avatar'] ;?>
+        </div>
           
         <?php }?> 
+        
+        
 
 
        
         <div class="position_button">
             <a class="" href="../api_skin_viewer/index.html"><button class="button_creation">Creation   _Avatar</button></a>
         </div>
-        <div class="position_button_dps">
+        <!-- <div class="position_button_dps">
             <a class="" href="../api_dps/index.php"><button class="button_creation">DPS</button></a>
-        </div>
+        </div> -->
         <div class="position_button_enregister">
         <form method="POST" class="" action="./script/Envoie_avatar.php">
             <input class="button_creation button_enregister_color" type="submit" name="Envoie_avatar" value="confirmer">

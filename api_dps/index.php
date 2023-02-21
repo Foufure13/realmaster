@@ -7,7 +7,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -21,9 +21,11 @@
         var classe = "<?php echo isset($_SESSION['classe_avatar']) ? $_SESSION['classe_avatar'] : ''; ?>";
     </script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
     <script defer="defer" src="./static/js/main.7b9910f8.js"></script>
     <link href="./static/css/main.df192802.css" rel="stylesheet" />
   </head>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
