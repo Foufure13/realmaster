@@ -40525,6 +40525,12 @@ n.m = e, n.n = function(e) {
                 children: [g, (0, wt.jsxs)("div", {
                   id: "equipements",
                   className: Yc + " highlightHover",
+<<<<<<< HEAD
+=======
+                  style: {
+                    border: "2px solid " + t.color
+                  },
+>>>>>>> b8153955fb75226fc5811826c9d6a7b6fb1bf54b
                   onClick: function() {
                     return u("/set/".concat(n))
                   },
