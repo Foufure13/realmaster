@@ -1,16 +1,13 @@
 <?php
 ini_set('display_errors', 1);
 
-
 $file_to_include = '../script/script_base_db.php';
 include $file_to_include;
 
-$_SESSION['couleur']= "#c20b398f";
+$script_recup_info_user = './script_recup_info_user.php';
+include $script_recup_info_user;
 
-if (!isset($_SESSION['pseudo']))
-{
-  header('location: ../Connexion/login.php');
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -19,12 +16,12 @@ if (!isset($_SESSION['pseudo']))
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile <?= $_SESSION['pseudo']; ?></title>
+    <title>Profile <?= $_SESSION['pseudo_recherche']; ?></title>
     <link rel="icon" href="../Media/Oryx_jeu.png">
-    <link rel="stylesheet" href="compte.css">
+    <link rel="stylesheet" href="compte_recherche.css">
     <link rel="stylesheet" href="../Avatar/creation_avatar.css">
     <link rel="stylesheet" href="../messages_generale/style_message.css">
-    <!-- <script src="https://kit.fontawesome.com/32d4b62f47.js" crossorigin="anonymous"></script> -->
+    <script src="https://kit.fontawesome.com/32d4b62f47.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><!-- ajout des dépencance JS pour le chargement des message  -->
 </head>
 <body>
@@ -59,7 +56,7 @@ if (!isset($_SESSION['pseudo']))
     <a href="#"><i class="fa-solid fa-magnifying-glass"></i><form method="POST" class="form" action="../find/script_recherche.php">
     <input type="text" name="recherche_pseudo" class="recherche" required="required" placeholder="Rechecher un pseudo">
     </form></a>
-    <div class="animation start-portefolio"></div>
+    <div class="animation start-animate"></div>
   </nav>
 
 
@@ -100,14 +97,14 @@ if (!isset($_SESSION['pseudo']))
     </div>
     <div class="info">
       <div class="info1">
-        <h1><?= $_SESSION['pseudo']; ?></h1>
-        <h5>Date de creation: <?= $_SESSION['user_date']; ?></h5>
+        <h1><?= $find_user_pseudo; ?></h1>
+        <h5>Date de creation: <?= $find_user_date; ?></h5>
       </div>
       <h2>Rang Maître</h2>
       <div class="description">
         <h2>Description:</h2>
         <div class="contenant"> 
-          <h3><?= $_SESSION['user_description']; ?></h3>
+          <h3><?= $find_user_description; ?></h3>
         </div>
       </div>      
     </div>
@@ -128,7 +125,7 @@ if (!isset($_SESSION['pseudo']))
 
 
 
-  <script src="/Compte/script/chargement_avatar.js"></script>
+  <script src="/find/chargement_avatar.js"></script>
 
   <script src="/js/navbar_interaction.js"></script>
   <script src="/js/envoie_message.js"></script>

@@ -1,11 +1,11 @@
 <?php
-
-
-$file_to_include = '../../script/script_base_db.php';
+$file_to_include = '../script/script_base_db.php';
 include $file_to_include;
 
-$enregister_avatar = $bdd->query('SELECT * FROM avatar ORDER BY id DESC');
+$current_user = $_SESSION['pseudo_recherche'];
 
+$enregister_avatar = $bdd->prepare('SELECT * FROM avatar WHERE pseudo = ? ORDER BY id DESC');
+$enregister_avatar->execute(array($current_user));
 
 
 

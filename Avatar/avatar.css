@@ -1,11 +1,12 @@
 nav {
-    
   position: relative;
-  width: 590px;
+  width: 820px;
   height: 50px;
   border-radius: 8px;
   font-size: 0;
   margin: auto;
+  display: flex;
+  justify-content: center;
 }
 nav a {
   line-height: 50px;
@@ -42,31 +43,87 @@ a:nth-child(4) {
 }
 a:nth-child(5) {
   width: 70px;
+  transition: 0.5s;
+  overflow: hidden;
+  color: white;
+}
+a:nth-child(5):hover
+{
+    width: 300px;
+    background-color:#ff8000;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+a:nth-child(5):hover i {
+  visibility: hidden;
+}
+
+a:nth-child(5)::before 
+{
+    transition: 0.5s;
+}
+textarea{
+ resize: none;
+ overflow-y: hidden;
+}
+.recherche
+{
+    position: absolute;
+    left: 60px;
+    top: 15px;
+    padding-top:0;
+    width: 180px;
+    height: 20px;
+    background-color: rgba(68, 68, 68, 0.608);
+    line-height: 2;
+    color: #ffffff;
+    border-radius: 4px;
+    border: none;
+    font-family: 'arcadeclassicregular';
+    letter-spacing: 0.5px;
+}
+a:nth-child(5) form input{
+  visibility: hidden;
+}
+a:nth-child(5):hover form input {
+  visibility: visible;
+}
+.recherche::placeholder{
+  color: #ffffff;
+}
+.recherche:active{
+  border: none;
+}
+a:nth-child(5):hover::before
+{
+visibility: hidden;
+transform: rotate(45deg) translate(90px, -90px);
 }
 nav .start-home, a:nth-child(1):hover~.animation {
   width: 100px;
-  left: 0;
+  left: 140px;
   background-color: #064a93;
 }
 nav .start-about, a:nth-child(2):hover~.animation {
   width: 110px;
-  left: 100px;
+  left: 240px;
   background-color: #0062ff;
 }
 nav .start-blog, a:nth-child(3):hover~.animation {
   width: 100px;
-  left: 210px;
+  left: 350px;
   background-color: #e100ff;
 }
 nav .start-portefolio, a:nth-child(4):hover~.animation {
   width: 100px;
-  left: 340px;
+  left: 480px;
   background-color: #ff0040;
 }
-nav .start-portefolio, a:nth-child(5):hover~.animation {
-  width: 70px;
-  left: 470px;
-  background-color: #ff8000;
+nav .start-animate, a:nth-child(5):hover~.animation {
+  width: 100px;
+  left: 0;
+  background-color: #ffffff00;
 }
 
 body {

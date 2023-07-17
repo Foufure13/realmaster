@@ -135,9 +135,9 @@
   left: 0;
 }
 .mobile-nav-toggle:active {
-  border: solid 1px #a41616;
+  border: solid 1px #000000;
     background-color:rgb(255, 255, 255); 
-    color:#a41616 ;
+    color:#000000 ;
     margin-top: 17px;
     box-shadow: 0 0 0 rgb(255, 255, 255); 
 }
@@ -221,9 +221,9 @@
     cursor: pointer;
 }
 .zone_button:active{
-    border: solid 1px #a4161699;
+    border: solid 1px #00000099;
     background-color:rgb(255, 255, 255); 
-    color:#a4161699 ;
+    color:#00000099 ;
     margin-top: 17px;
     box-shadow: 0 0 0 rgb(160,160,160); 
 }
@@ -240,7 +240,7 @@
   font-family: 'arcadeclassicregular';
 }
 .zone_message{
-  background-color: #a4161699;
+  background-color: #00000099;
   color: white;
   font-family: 'arcadeclassicregular';
   height: 85px;

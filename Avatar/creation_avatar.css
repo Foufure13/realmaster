@@ -1,26 +1,25 @@
 
 .carte_avatar
 {
-	background-color: #7b7b7b85 ;
+	background-color: #333333 ;
 	border-radius: 15px;
+  border:#ffffff 2px solid ;
   margin: 100px 0 0 0;
-	box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
-	color: #B3B8CD;
+	box-shadow: 0px 10px 20px -10px #c5c5c58f;
+	color: #ffffff;
 	padding: 20px 0 20px 0;
 	position: relative;
 	width: 100%;
   display: flex;
+
   flex-direction: row;
+
   align-items: center;
   justify-content: flex-start;
-
-
-
-
+  
   margin: 50px auto 20px auto;
-
   width: 80%;
-  height: 400px;
+  height: 300px;
 }
 .carte_avatar div .button_creation{
   position: relative;
@@ -80,7 +79,8 @@
 }
 .button_enregister_color
 {
-  background: rgb(10, 119, 34);
+  background: #e100ff;
+  color: #ffffff  ;
 }
 
 
@@ -98,10 +98,17 @@
 
 .carte_load_avatar
 {
-  max-height: 120px;
+  max-height: 140px;
   max-width: 50%;
 }
 .carte_load_avatar div
 {
   transform: scale(0.5);
+}
+.stuff_avatar
+{
+  transform: scale(4);
+  position: absolute;
+  top: 80px;
+  left: 800px;
 }

@@ -22,8 +22,8 @@ $_SESSION['couleur'] = "#064a938f";
   <link rel="icon" href="/Media/Oryx_jeu.png">
   <link rel="stylesheet" href="/Avatar/creation_avatar.css">
   <link rel="stylesheet" href="messages_generale/style_message.css">
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"> -->
-  <!-- <script src="https://kit.fontawesome.com/32d4b62f47.js" crossorigin="anonymous"></script> -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/32d4b62f47.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!-- ajout des dépencance JS pour le chargement des message  -->
 </head>

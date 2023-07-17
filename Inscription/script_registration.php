@@ -1,17 +1,7 @@
 <?php
-session_start();
-$host = "labo-g4.info";
-$username = "patruno_php";
-$password = "M,Q=6D=ojc-@";
-$dbname = "patruno_realmaster";
-try {
+$file_to_include = '../script/script_base_db.php';
+include $file_to_include;
 
-    $bdd = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";
-} catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-}
 $message_erreur = '';
 
 // création dun code hewa dune couleur aléatoire

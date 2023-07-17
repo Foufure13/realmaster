@@ -52,9 +52,7 @@ a:nth-child(5):hover
     width: 300px;
     background-color:#ff8000;
     border-radius: 8px;
-    overflow: visible;
-    box-sizing: border-box;
-
+    cursor: pointer;
 
 }
 a:nth-child(5):hover i {
@@ -65,7 +63,7 @@ a:nth-child(5)::before
 {
     transition: 0.5s;
 }
- a form input{
+textarea{
  resize: none;
  overflow-y: hidden;
 }
@@ -122,16 +120,17 @@ nav .start-portefolio, a:nth-child(4):hover~.animation {
   left: 480px;
   background-color: #ff0040;
 }
-nav .start-portefolio, a:nth-child(5):hover~.animation {
-  width: 100px;
-  left: 0;
-  background-color: #ffffff00;
+nav .start-animate, a:nth-child(5):hover~.animation {
+  width: 80px;
+  left: 605px;
+  background-color: #ff8000;
 }
+
 
 body {
   font-size: 12px;
   font-family: 'arcadeclassicregular';
-  background-image:url(../Media/candy.png);
+  background-image:url(../Media/Oryx_chamber.png);
   background-position-x: center;
   animation: animatebackground 12s linear infinite;
 }
@@ -144,13 +143,13 @@ body {
       background-position:0 700px ;
   }
 }
-h1 {
+.titre h1 {
   text-align: center;
   margin: 40px 0 40px;
   text-align: center;
   font-size: 50px;
   color: #ffffff;
-  text-shadow: 8px 8px 16px #064a93;
+  text-shadow: 8px 8px 16px #ff0040;
   font-family: 'arcadeclassicregular';
 }
 
@@ -165,7 +164,7 @@ p {
 }
 
 span {
-    color: #064a93;
+    color: #ff0040;
 }
 @font-face {
   font-family: 'arcadeclassicregular';
@@ -175,7 +174,8 @@ span {
   font-style: normal;
 
 }
-.log{
+.log
+{
   font-family: 'arcadeclassicregular';
   display: flex;
   align-items: center;
@@ -185,7 +185,7 @@ span {
   border: none;
   outline: none;
   color:rgb(255, 255, 255) ;
-  background: #064a93;
+  background: #ff0040;
   padding: 11px 0px;
   width: 100px;
   border-radius: 4px;
@@ -210,83 +210,123 @@ font-family: 'arcadeclassicregular';
 width: 100px;
 }
 .connect{
+display: flex;
+position: absolute;
+top: 7px;
+right: 0;
+}
+
+
+* {
+	box-sizing: border-box;
+}
+.card-container h1 {
+	margin: 10px 0 0 10px;
+}
+.card-container h2:not(.description h2) {
+	margin: 10px 0 0 15px;
+	text-transform: none;
+  color: #ddbc00;
+}
+.info{
+  margin-left: 5em;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+}
+.info1{
   display: flex;
-  position: absolute;
-  top: 7px;
-  right: 0;
-  }
-  .boite{
-    background-color: #064a93a8;
-    border-radius: 8px;
-    border: white solid 1px;
-    margin: 50px 300px 0 300px;
-    padding: 10px 20px 10px 20px;
-    font-family: 'Orbitron', sans-serif;
-  }
-  .text{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 1rem;
-    padding: 0 0 20px 0;
-    text-align: center;
-    color: #ffffff;
-   
-  }
-  .text .rotmg{
-    width: 200px;
-    height: 100px;
-  }
-  .boite h2{
-    padding-bottom:-20px ;
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    font-size: 2rem;
+  flex-direction: row;
+
+}
+.info1 h5{
+  margin-left: 10px;
+  color: rgb(211, 211, 211);
+}
+.info h3{
+  margin-left: 20px;
+  color: rgb(211, 211, 211);
+}
+
+p {
+	font-size: 14px;
+	line-height: 21px;
+}
+.contenant{
+  width: 100%;
+  height: 100%;
+  background-color: grey;
+  border-radius: 4px;
   
-  }
-  
-  body::-webkit-scrollbar {
-    width: 12px;
-    background-color: #ffffff00;
-  }
-  
-  body::-webkit-scrollbar-thumb {
-    background-color: #b4b4b400;
+}
+.card-container{
+	background-color: #7b7b7b85 ;
+	border-radius: 15px;
+  margin: 100px 0 0 0;
+	box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+	color: #B3B8CD;
+	padding: 20px 0 20px 0;
+	position: relative;
+	width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 100px;
+  height: 300px;
+}
+
+.card-container .pro {
+	color: #ddbc00;
+	background-color: #fe0b0b;
+	border-radius: 3px;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 3px 7px;
+	position: absolute;
+	top: 30px;
+	left: 30px;
+}
+
+.card-container .round {
+
+  max-block-size: 170px;
+  border-radius: 50px;
+
+}
+
+.primary
+{
+    border: none;
+    outline:none;
+    color:rgb(0, 0, 0) ;
+    background: rgb(255, 255, 255);
+    padding: 11px 0px;
+    width: 150px;
     border-radius: 4px;
-  }  
-  .image_presentation{
-    height: 200px;
-    width: 300px;
-    padding: 20px 10px 20px 10px;
-  }
-  .avatar{
-    background-color: #e100ff;
-    border-radius:4px;
-
-  }.image{
-    width: 350px;
-    padding: 20px 10px 20px 10px;
-    height: 200px;
-  }
-  .avatar{
-    background-color: #e100ff;
-    border-radius:4px;
-    box-shadow: 0 7px 0 rgb(255, 255, 255);
-
-  }
-  .avatar:active{
-    border: solid 1px #e100ff;
-    background-color:rgb(255, 255, 255); 
+    font-weight: 600;
+    box-shadow: 0 7px 0 rgb(160,160,160);
+    position: absolute;
+    right: 20px;
+    bottom: 35px;
+}
+.primary:hover{
+    cursor: pointer;
+}
+.primary:active{
+    border: solid 1px black;
+    background-color:rgb(141, 141, 141); 
+    color:rgb(0, 0, 0) ;
     margin-top: 7px;
     box-shadow: 0 0 0 rgb(160,160,160); 
-  }
-  .avatar:active a{
-    color: #e100ff;
-  }
-
-
-  .avatar a {
-    text-decoration: none;
-    color: #ffffff;
-  }
+}
+.img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 100%;
+  margin-left: 5em;
+}
+.oryx_message
+{
+  min-height: 250px;
+}

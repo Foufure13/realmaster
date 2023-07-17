@@ -21,7 +21,7 @@ while($message =$recu_messages->fetch()) {
     {
     ?>
     <!-- <div class="message" style="margin: 2px 0px 2px 20px; padding : 5px;background-color :<?= $_SESSION['couleur'] ?>; "> -->
-    <div class="message" style="margin: 2px 0px 2px 20px; padding : 5px; ">
+    <div class="message" style="margin: 2px 0px 2px 20px; padding : 5px; background-color :<?= $_SESSION['couleur'] ?>; ">
 
         <h2>
             <strong style="font-size: 16px;"><?= $message['pseudo']; ?> : </strong><br/>
@@ -33,7 +33,7 @@ while($message =$recu_messages->fetch()) {
 
     } else {
         ?>
-        <div class="message" style="margin: 2px 20px 2px 0px; padding : 5px; ">
+        <div class="message" style="margin: 2px 20px 2px 0px; padding : 5px; background-color :<?= $_SESSION['couleur'] ?>; ">
     
             <h2>
                 <strong style="font-size: 16px;"><?= $message['pseudo']; ?> : </strong><br/>

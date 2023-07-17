@@ -6,12 +6,12 @@ function sendDataToPHP(canvasData) {
     .then(response => response.text())
     .then(data => {
       console.log('Success:', data);
+      window.location.href = "/Avatar/Avatar.php";
     })
     .catch((error) => {
       console.error('Error:', error);
     });
   }
-
 
 switch (classe) {
     case "Rogue":
@@ -40523,37 +40523,35 @@ n.m = e, n.n = function(e) {
                 }), document.getElementById("modal")) : null;
             return (0, wt.jsxs)(wt.Fragment, {
                 children: [g, (0, wt.jsxs)("div", {
-                    className: Yc + " highlightHover",
-                    style: {
-                        border: "2px solid " + t.color
-                    },
-                    onClick: function() {
-                        return u("/set/".concat(n))
-                    },
-                    onMouseEnter: function(e) {
-                        return v(e, !0)
-                    },
-                    onMouseLeave: function(e) {
-                        return v(e, !1)
-                    },
-                    onMouseMove: function(e) {
-                        return v(e)
-                    },
-                    children: [(0, wt.jsxs)("div", {
-                        className: Zc,
-                        children: [(0, wt.jsx)(kt, {
-                            texture: null === o || void 0 === o ? void 0 : o.texture,
-                            size: 32,
-                        }), a.map((function(e, t) {
-                            return (0, wt.jsx)(Bf, {
-                                item: e,
-                                size: 32,
-                                showAccuracy: !0
-                            }, t)
-                        }))]
-                    }), (0, wt.jsx)(Hf, {
-                        set: t
-                    })]
+                  id: "equipements",
+                  className: Yc + " highlightHover",
+                  onClick: function() {
+                    return u("/set/".concat(n))
+                  },
+                  onMouseEnter: function(e) {
+                    return v(e, !0)
+                  },
+                  onMouseLeave: function(e) {
+                    return v(e, !1)
+                  },
+                  onMouseMove: function(e) {
+                    return v(e)
+                  },
+                  children: [(0, wt.jsxs)("div", {
+                    className: Zc,
+                    children: [(0, wt.jsx)(kt, {
+                      texture: null === o || void 0 === o ? void 0 : o.texture,
+                      size: 32,
+                    }), a.map((function(e, t) {
+                      return (0, wt.jsx)(Bf, {
+                        item: e,
+                        size: 32,
+                        showAccuracy: !0
+                      }, t)
+                    }))]
+                  }), (0, wt.jsx)(Hf, {
+                    set: t
+                  })]
                 })]
             })
         }
@@ -40640,26 +40638,13 @@ n.m = e, n.n = function(e) {
                     })),(0, wt.jsx)("button", {
                         className: "Save_button",
                         onClick: function() {
-                          const setsDisplay = document.querySelector(".SetsDisplay_setDisplay__M+aQ1");
-                      
-                          if (setsDisplay) {
-                            const canvas = document.createElement("canvas");
-                            const { width, height } = setsDisplay.getBoundingClientRect();
-                      
-                            canvas.width = width;
-                            canvas.height = height;
-                      
-                            const context = canvas.getContext("2d");
-                      
-                            if (context) {
-                              context.drawImage(setsDisplay, 0, 0, width, height);
-                      
-                              const canvasData = canvas.toDataURL("image/octet-stream");
-                              var canvasBase64 = canvasData.replace(/^data:image\/[a-z]+;base64,/, "");
-                              sendDataToPHP(canvasBase64);
-                              //window.location.href = "/Avatar/Avatar.php";
-                            }
-                          }
+                            const equipements = document.getElementById("equipements");
+                            domtoimage.toPng(equipements)
+                              .then((dataUrl) => {
+                                const base64 = dataUrl.replace(/^data:image\/(png|jpg);base64,/, "");
+                                console.log(base64);
+                                sendDataToPHP(base64);
+                              })
                         },
                         children: "SAUVEGARDER"
                       })]
@@ -41948,7 +41933,7 @@ n.m = e, n.n = function(e) {
                 }
             },
             zp = Lp(),
-            Fp = "object" == typeof exports && exports && !exports.nodeType && exports,
+            Fp = "object" == typeof exports && exports && !nodeType && exports,
             Bp = Fp && "object" == typeof module && module && !module.nodeType && module,
             Up = Bp && Bp.exports === Fp ? zh.Buffer : void 0,
             Hp = Up ? Up.allocUnsafe : void 0;
@@ -42026,7 +42011,7 @@ n.m = e, n.n = function(e) {
         var dv = function() {
                 return !1
             },
-            hv = "object" == typeof exports && exports && !exports.nodeType && exports,
+            hv = "object" == typeof exports && exports && !nodeType && exports,
             pv = hv && "object" == typeof module && module && !module.nodeType && module,
             vv = pv && pv.exports === hv ? zh.Buffer : void 0,
             gv = (vv ? vv.isBuffer : void 0) || dv,
@@ -42052,7 +42037,7 @@ n.m = e, n.n = function(e) {
                     return e(t)
                 }
             },
-            Ov = "object" == typeof exports && exports && !exports.nodeType && exports,
+            Ov = "object" == typeof exports && exports && !nodeType && exports,
             Cv = Ov && "object" == typeof module && module && !module.nodeType && module,
             Pv = Cv && Cv.exports === Ov && Nh.process,
             jv = function() {
